@@ -33,7 +33,7 @@
 ### Tech Stack <a name="tech-stack"></a>
 
 
-  <summary>HTML And CSS </summary>
+    <summary>HTML And CSS </summary>
 
 
 <!-- Features -->
