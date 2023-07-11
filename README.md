@@ -32,12 +32,9 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-<details>
+
   <summary>HTML And CSS </summary>
-  <ul>
-    <li><a href="https://www.w3.org/standards/webdesign/htmlcss"></a></li>
-  </ul>
-</details>
+
 
 <!-- Features -->
 
