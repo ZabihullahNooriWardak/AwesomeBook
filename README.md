@@ -20,7 +20,7 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](https://github.com/ZabihullahNooriWardak/Zabih-portfolio/blob/portfolio/LICENSE)
+- [📝 License](https://github.com/ZabihullahNooriWardak/AwesomeBook/blob/feature/LICENSE)
 
 <!-- PROJECT DESCRIPTION -->
 
