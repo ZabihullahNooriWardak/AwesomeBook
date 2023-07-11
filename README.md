@@ -69,7 +69,7 @@ And go to that folder where you want the project for example if you want to have
   cd my-folder
   C:\Users\Dell\my-folder
 After you can clone using this command  
-  git clone https://github.com/ZabihullahNooriWardak/portfolio.git
+  git clone https://github.com/ZabihullahNooriWardak/AwesomeBook.git
 
 
 ### Install
