@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-  <h3><b>Zabih Noori Portfolio</b></h3>
+  <h3><b>Awesome Book</b></h3>
 
 </div>
 # 📗 Table of Contents
@@ -24,11 +24,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [ portfolio] <a name="about-project"></a>
+# 📖 [ Awesome Book] <a name="about-project"></a>
 
-> Zabih Noori Protfolio project     
-
-**[portfolio project]** is a project which you can find info about me
+ > This is web based app which stores book with its authors names 
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -107,7 +105,6 @@ to run this project you need Google chrome or other browser
 
  - integration with javascript
  - Adding more html content
- - Adding links to my projects
 
 <!-- CONTRIBUTING -->
 
@@ -120,11 +117,11 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project: As this is open source project you can help with building that.
+If you like this project give it a star⭐
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-I would like to thank for checking the project source code and your suggestion and feedback
+I would like to thank microverse and my family for supporting me to build this project.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📝 License <a name="license"></a>
