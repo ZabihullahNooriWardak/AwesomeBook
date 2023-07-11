@@ -10,6 +10,9 @@ addButton.addEventListener('click', () => {
     const bookName = document.createElement('p');
     const bookAutor = document.createElement('p');
     const removeButton = document.createElement('button');
+    const parentDiv = document.createElement('div');
+    parentDiv.classList.add('parent-container');
+    removeButton.classList.add('remove');
     const removeButtonText = document.createTextNode('Remove');
     const allBooks = document.querySelector('.allBooks');
     const title = document.querySelector('.title').value;
@@ -23,11 +26,12 @@ addButton.addEventListener('click', () => {
     bookName.innerText = title;
     bookAutor.innerText = author;
     removeButton.appendChild(removeButtonText);
-    allBooks.appendChild(bookName);
-    allBooks.appendChild(bookAutor);
-    allBooks.appendChild(removeButton);
+    parentDiv.appendChild(bookName);
+    parentDiv.appendChild(bookAutor);
+    parentDiv.appendChild(removeButton);
     const hr = document.createElement('hr');
-    allBooks.appendChild(hr);
+    parentDiv.appendChild(hr);
+    allBooks.appendChild(parentDiv);
     document.querySelector('.title').value = '';
     document.querySelector('.author').value = '';
   }
@@ -37,16 +41,33 @@ window.onload = () => {
   for (let i = 0; i < arrayOfAllbooks.length; i += 1) {
     const bookName = document.createElement('p');
     const bookAutor = document.createElement('p');
+    const parentDiv = document.createElement('div');
+    parentDiv.classList.add('parent-container');
     const removeButton = document.createElement('button');
     const removeButtonText = document.createTextNode('Remove');
+    removeButton.classList.add('remove');
     const allBooks = document.querySelector('.allBooks');
     bookName.innerText = arrayOfAllbooks[i].bookName;
     bookAutor.innerText = arrayOfAllbooks[i].title;
     removeButton.appendChild(removeButtonText);
-    allBooks.appendChild(bookName);
-    allBooks.appendChild(bookAutor);
-    allBooks.appendChild(removeButton);
+    parentDiv.appendChild(bookName);
+    parentDiv.appendChild(bookAutor);
+    parentDiv.appendChild(removeButton);
     const hr = document.createElement('hr');
-    allBooks.appendChild(hr);
+    parentDiv.appendChild(hr);
+    allBooks.appendChild(parentDiv);
   }
 };
+
+
+document.addEventListener('click', (event) => {
+  if (event.target.classList.contains('remove')) {
+    // Handle the removal of the parent element
+    const parentElement = event.target.closest('.parent-container');
+    if (parentElement) {
+      console.log(parentElement);
+      parentElement.remove();
+    }
+  }
+});
+
