@@ -45,21 +45,6 @@ function handleRemoveButtonClick(event) {
 
 // Attach the remove button click event listener to the container
 containerForAllBooks.addEventListener('click', handleRemoveButtonClick);
-
-// const allRemoveButtons = document.getElementsByClassName('remove');
-// containerForAllBooks.addEventListener('click', (event) => {
-//   if (event.target.classList.contains('remove')) {
-//     for (let i = 0; i < allRemoveButtons.length; i += 1) {
-//       allRemoveButtons[i].addEventListener('click', () => {
-//         allBooks.splice(i, 1);
-//         localStorage.setItem('allBooks', JSON.stringify(allBooks));
-//         // eslint-disable-next-line no-restricted-globals
-//         location.reload();
-//       });
-//     }
-//   }
-// });
-
 // add button click  eventHandler
 addButton.addEventListener('click', () => {
   if (bookTextField.value !== '' && authorTextField.value !== '') {
