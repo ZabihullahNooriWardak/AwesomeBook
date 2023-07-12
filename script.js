@@ -1,82 +1,42 @@
-/* eslint-disable no-plusplus */
-let allBooksArray = [];
-const arr = localStorage.getItem('arrayBooks');
-const arrayOfAllbooks = JSON.parse(arr);
-// javascript for DOM manipulation
-const addButton = document.querySelector('.addButton');
-addButton.addEventListener('click', () => {
-  if (document.querySelector('.title').value !== '' && document.querySelector('.author').value !== '') {
-    const bookName = document.createElement('p');
-    const bookAutor = document.createElement('p');
-    const removeButton = document.createElement('button');
-    const parentDiv = document.createElement('div');
-    parentDiv.classList.add('parent-container');
-    removeButton.classList.add('remove');
-    const removeButtonText = document.createTextNode('Remove');
-    const allBooks = document.querySelector('.allBooks');
-    const title = document.querySelector('.title').value;
-    const author = document.querySelector('.author').value;
-    const singlebook = { bookName: 'noName', title: 'no title' };
-    singlebook.bookName = title;
-    singlebook.title = author;
-    allBooksArray.push(singlebook);
-    allBooksArray = arrayOfAllbooks.concat(allBooksArray);
-    localStorage.setItem('arrayBooks', JSON.stringify(allBooksArray));
-    bookName.innerText = title;
-    bookAutor.innerText = author;
-    removeButton.appendChild(removeButtonText);
-    parentDiv.appendChild(bookName);
-    parentDiv.appendChild(bookAutor);
-    parentDiv.appendChild(removeButton);
-    const hr = document.createElement('hr');
-    parentDiv.appendChild(hr);
-    allBooks.appendChild(parentDiv);
-    document.querySelector('.title').value = '';
-    document.querySelector('.author').value = '';
+// list for all books
+const allBooks = [];
+const arrayFromLocalStorage = localStorage.getItem('allBooks');
+const arrayOfAllbooksFromLocal = JSON.parse(arrayFromLocalStorage);
+// Dom manipulation
+const containerForAllBooks = document.querySelector('.container');
+const bookTextField = document.querySelector('.bookName');
+const authorTextField = document.querySelector('.bookAuthor');
+const addButton = document.querySelector('.add');
+
+// Function for adding new Book
+function add(name, author) {
+  const containerForSingleBook = document.createElement('div');
+  containerForSingleBook.innerHTML = `<p>${name}</p> <br> <p>${author}</p><br><button class="remove">remove</button><br><hr>`;
+  containerForAllBooks.appendChild(containerForSingleBook);
+  const singleBookObject = { bookName: name, bookAuthor: author };
+  allBooks.push(singleBookObject);
+  localStorage.setItem('allBooks', JSON.stringify(allBooks));
+  
+  bookTextField.value = '';
+  authorTextField.value = '';
+}
+// remove button function
+
+const allRemoveButtons = document.getElementsByClassName('remove');
+containerForAllBooks.addEventListener('mouseover', (event) => {
+  if (event.target.classList.contains('remove')) {
+    for (let i = 0; i < allRemoveButtons.length; i += 1) {
+      allRemoveButtons[i].addEventListener('click', () => {
+        allBooks.splice(i, 1);
+      });
+    }
   }
 });
-function addRemoveButtonListeners() {
-  const allRemoveButtons = document.getElementsByClassName('remove');
-
-  for (let i = 0; i < allRemoveButtons.length; i++) {
-    // eslint-disable-next-line no-loop-func
-    allRemoveButtons[i].addEventListener('click', () => {
-      arrayOfAllbooks.splice(i, 1);
-      allBooksArray.splice(i, 1);
-      localStorage.setItem('arrayBooks', JSON.stringify(arrayOfAllbooks));
-    });
-  }
-}
-
-window.onload = () => {
-  for (let i = 0; i < arrayOfAllbooks.length; i += 1) {
-    const bookName = document.createElement('p');
-    const bookAutor = document.createElement('p');
-    const parentDiv = document.createElement('div');
-    parentDiv.classList.add('parent-container');
-    const removeButton = document.createElement('button');
-    const removeButtonText = document.createTextNode('Remove');
-    removeButton.classList.add('remove');
-    const allBooks = document.querySelector('.allBooks');
-    bookName.innerText = arrayOfAllbooks[i].bookName;
-    bookAutor.innerText = arrayOfAllbooks[i].title;
-    removeButton.appendChild(removeButtonText);
-    parentDiv.appendChild(bookName);
-    parentDiv.appendChild(bookAutor);
-    parentDiv.appendChild(removeButton);
-    const hr = document.createElement('hr');
-    parentDiv.appendChild(hr);
-    allBooks.appendChild(parentDiv);
-  }
-  addRemoveButtonListeners();
-};
 
 
-document.addEventListener('click', (event) => {
-  if (event.target.classList.contains('remove')) {
-    const parentElement = event.target.closest('.parent-container');
-    if (parentElement) {
-      parentElement.remove();
-    }
+// add button click  eventHandler
+addButton.addEventListener('click', () => {
+  if (bookTextField.value !== '' && authorTextField.value !== '') {
+    add(bookTextField.value, authorTextField.value);
   }
 });
