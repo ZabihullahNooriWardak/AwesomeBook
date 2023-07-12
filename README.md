@@ -43,7 +43,7 @@
 - **[User-friendly Interface]**
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://zabihullahnooriwardak.github.io/Zabih-portfolio/)
+- [Live Demo Link](https://zabihullahnooriwardak.github.io/AwesomeBook/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
