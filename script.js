@@ -31,20 +31,21 @@ function add(name, author) {
 }
 // remove button function
 
-const allRemoveButtons = document.getElementsByClassName('remove');
-containerForAllBooks.addEventListener('mouseover', (event) => {
+function handleRemoveButtonClick(event) {
   if (event.target.classList.contains('remove')) {
-    for (let i = 0; i < allRemoveButtons.length; i += 1) {
-      allRemoveButtons[i].addEventListener('click', () => {
-        allBooks.splice(i, 1);
-        localStorage.setItem('allBooks', JSON.stringify(allBooks));
-        // eslint-disable-next-line no-restricted-globals
-        location.reload();
-      });
+    const removeButton = event.target;
+    const bookContainer = removeButton.parentNode;
+    const index = Array.from(containerForAllBooks.children).indexOf(bookContainer);
+    if (index > -1) {
+      allBooks.splice(index, 1);
+      localStorage.setItem('allBooks', JSON.stringify(allBooks));
+      containerForAllBooks.removeChild(bookContainer);
     }
   }
-});
+}
 
+// Attach the remove button click event listener to the container
+containerForAllBooks.addEventListener('click', handleRemoveButtonClick);
 // add button click  eventHandler
 addButton.addEventListener('click', () => {
   if (bookTextField.value !== '' && authorTextField.value !== '') {
