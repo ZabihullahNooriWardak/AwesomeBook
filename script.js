@@ -1,8 +1,6 @@
 let allBooksArray = [];
-
 const arr = localStorage.getItem('arrayBooks');
 const arrayOfAllbooks = JSON.parse(arr);
-
 // javascript for DOM manipulation
 const addButton = document.querySelector('.addButton');
 addButton.addEventListener('click', () => {
@@ -57,17 +55,25 @@ window.onload = () => {
     parentDiv.appendChild(hr);
     allBooks.appendChild(parentDiv);
   }
+  addRemoveButtonListeners();
 };
+function addRemoveButtonListeners() {
+  const allRemoveButtons = document.getElementsByClassName('remove');
 
+  for (let i = 0; i < allRemoveButtons.length; i++) {
+    allRemoveButtons[i].addEventListener('click', () => {
+      arrayOfAllbooks.splice(i, 1);
+      allBooksArray.splice(i, 1);
+      localStorage.setItem('arrayBooks', JSON.stringify(arrayOfAllbooks));
+    });
+  }
+}
 
 document.addEventListener('click', (event) => {
   if (event.target.classList.contains('remove')) {
-    // Handle the removal of the parent element
     const parentElement = event.target.closest('.parent-container');
     if (parentElement) {
-      console.log(parentElement);
       parentElement.remove();
     }
   }
 });
-
