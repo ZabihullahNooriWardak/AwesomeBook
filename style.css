@@ -7,6 +7,47 @@ p {
   padding: 0;
 }
 
+div.container {
+  border: 2px solid black;
+  min-height: 20px;
+  margin: 0 auto;
+  width: 80%;
+}
+
 button {
   margin-bottom: 4px;
+}
+
+h2 {
+  text-align: center;
+}
+
+hr {
+  width: 20%;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+div.inputs {
+  text-align: center;
+}
+
+div.containerBooks {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remove {
+  margin: 5px;
+}
+
+div.bookDetails {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
