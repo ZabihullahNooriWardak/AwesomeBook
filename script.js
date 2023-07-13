@@ -55,7 +55,7 @@ function handleRemoveButtonClick(event) {
 
 // Attach the remove button click event listener to the container
 containerForAllBooks.addEventListener('click', handleRemoveButtonClick);
-// add button click  eventHandler
+
 addButton.addEventListener('click', () => {
   if (bookTextField.value !== '' && authorTextField.value !== '') {
     const book = new SingleBook(bookTextField.value, authorTextField.value);
