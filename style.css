@@ -46,7 +46,7 @@ div.containerBooks {
 }
 
 div.bookDetails {
-  width: 50%;
+  width: 35%;
   display: flex;
   justify-content: space-between;
   align-items: center;
