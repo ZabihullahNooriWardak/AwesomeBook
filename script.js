@@ -16,13 +16,20 @@ if (arrayFromLocalStorage !== null) {
     containerForAllBooks.appendChild(containerForSingleBook);
   }
 }
-
+// class for single book
+class SingleBook{
+    constructor(name,author){
+    bookName=name;
+    bookAuthor=author;
+  }
+}
 // Function for adding new Book
 function add(name, author) {
   const containerForSingleBook = document.createElement('div');
   containerForSingleBook.innerHTML = `<p>${name}</p> <br> <p>${author}</p><br><button class="remove">remove</button><br><hr>`;
   containerForAllBooks.appendChild(containerForSingleBook);
-  const singleBookObject = { bookName: name, bookAuthor: author };
+  // const singleBookObject = { bookName: name, bookAuthor: author };
+ const singleBookObject = SingleBook(name, author); 
   allBooks.push(singleBookObject);
   localStorage.setItem('allBooks', JSON.stringify(allBooks));
 
