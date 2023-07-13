@@ -56,9 +56,6 @@ class SingleBook {
   }
 }
 new SingleBook().display();
-// Function for adding new Book
-
-// remove button function
 
 // Attach the remove button click event listener to the container
 containerForAllBooks.addEventListener('click', new SingleBook().handleRemoveButtonClick);
