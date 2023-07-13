@@ -12,7 +12,8 @@ if (arrayFromLocalStorage !== null) {
   allBooks = arrayOfAllbooksFromLocal;
   for (let i = 0; i < allBooks.length; i += 1) {
     const containerForSingleBook = document.createElement('div');
-    containerForSingleBook.innerHTML = `<p>${allBooks[i].bookName}</p> <br> <p>${allBooks[i].bookAuthor}</p><br><button class="remove">remove</button><br><hr>`;
+    containerForSingleBook.classList.add('containerBooks');
+    containerForSingleBook.innerHTML = `<div class=bookDetails><p id='bookName'>${allBooks[i].bookName}</p> <p id='by'>by</p> <p id='bookAuthor'>${allBooks[i].bookAuthor}</p></div><button class="remove">remove</button>`;
     containerForAllBooks.appendChild(containerForSingleBook);
   }
 }
@@ -25,7 +26,8 @@ class SingleBook {
 
   add() {
     const containerForSingleBook = document.createElement('div');
-    containerForSingleBook.innerHTML = `<p>${this.bookName}</p> <br> <p>${this.bookAuthor}</p><br><button class="remove">remove</button><br><hr>`;
+    containerForSingleBook.classList.add('containerBooks');
+    containerForSingleBook.innerHTML = `<div class=bookDetails><p id='bookName'>${this.bookName}</p> <p id='by'>by</p> <p id='bookAuthor'>${this.bookAuthor}</p></div><button class="remove">remove</button>`;
     containerForAllBooks.appendChild(containerForSingleBook);
     const singleBookObject = new SingleBook(this.bookName, this.bookAuthor);
     allBooks.push(singleBookObject);
