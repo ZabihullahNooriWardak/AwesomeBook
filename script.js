@@ -17,25 +17,25 @@ if (arrayFromLocalStorage !== null) {
   }
 }
 // class for single book
-class SingleBook{
-    constructor(name,author){
-    bookName=name;
-    bookAuthor=author;
+class SingleBook {
+  constructor(name, author) {
+    this.bookName = name;
+    this.bookAuthor = author;
+  }
+
+  add() {
+    const containerForSingleBook = document.createElement('div');
+    containerForSingleBook.innerHTML = `<p>${this.bookName}</p> <br> <p>${this.bookAuthor}</p><br><button class="remove">remove</button><br><hr>`;
+    containerForAllBooks.appendChild(containerForSingleBook);
+    const singleBookObject = new SingleBook(this.bookName, this.bookAuthor);
+    allBooks.push(singleBookObject);
+    localStorage.setItem('allBooks', JSON.stringify(allBooks));
+    bookTextField.value = '';
+    authorTextField.value = '';
   }
 }
 // Function for adding new Book
-function add(name, author) {
-  const containerForSingleBook = document.createElement('div');
-  containerForSingleBook.innerHTML = `<p>${name}</p> <br> <p>${author}</p><br><button class="remove">remove</button><br><hr>`;
-  containerForAllBooks.appendChild(containerForSingleBook);
-  // const singleBookObject = { bookName: name, bookAuthor: author };
- const singleBookObject = SingleBook(name, author); 
-  allBooks.push(singleBookObject);
-  localStorage.setItem('allBooks', JSON.stringify(allBooks));
 
-  bookTextField.value = '';
-  authorTextField.value = '';
-}
 // remove button function
 
 function handleRemoveButtonClick(event) {
@@ -56,6 +56,7 @@ containerForAllBooks.addEventListener('click', handleRemoveButtonClick);
 // add button click  eventHandler
 addButton.addEventListener('click', () => {
   if (bookTextField.value !== '' && authorTextField.value !== '') {
-    add(bookTextField.value, authorTextField.value);
+    const book = new SingleBook(bookTextField.value, authorTextField.value);
+    book.add();
   }
 });
