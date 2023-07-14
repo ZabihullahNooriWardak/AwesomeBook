@@ -12,16 +12,10 @@ header.header {
   background-color: black;
 }
 
-#list:hover {
-  background-color: black;
-}
-
+#list:hover,
+#addNew:hover,
 #contact:hover {
-  background-color: black;
-}
-
-#addNew:hover {
-  background-color: black;
+  cursor: pointer;
 }
 
 body {
