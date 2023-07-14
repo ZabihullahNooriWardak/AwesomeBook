@@ -1,24 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Awesome Book</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- code starts from here -->
-  <h2>All awesome books</h2>
-  <div class="container">
-
-  </div>
-  <hr>
-  <h3>add a new book</h3>
-<div class="inputs">
-  <input  type="text" required class="bookName" placeholder="book name"> <br>
-  <input  type="text" required class="bookAuthor" placeholder="book Author" > <br>
-  <button class="add">Add</button>
-</div>
-</body>
-<script src="script.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awesome Book</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h3>Awesome Books</h3>
+      <div class="containerMenu">
+        <ul>
+          <li id="list">List</li>
+          <li id="addNew">AddNew</li>
+          <li id="contact">Contact</li>
+        </ul>
+      </div>
+    </header>
+    <div class="date"></div>
+    <div class="container">
+      <h4>All awesome books</h4>
+    </div>
+    <div class="inputs">
+      <h3>add a new book</h3>
+      <input type="text" required class="bookName" name="bookName" placeholder="book name" />
+      <br />
+      <input
+      name="bookAuthor"
+        type="text"
+        required
+        class="bookAuthor"
+        placeholder="book Author"
+      />
+      <br />
+      <button class="add">Add</button>
+    </div>
+    <div class="contact">
+      <h3>Contact information</h3>
+      <div class="paragraph">
+        <p>Do you have any question or you just want to say "Hello" ?</p>
+        <p>you can reach out to us !</p>
+      </div>
+      <ul>
+        <li>Our e-mail : Zabinoori712@gmail.com</li>
+        <li>Our phone number : +93(0)776578603</li>
+        <li>Our address : kampany Qala-E-kashif street kabul Afghanistan</li>
+      </ul>
+    </div>
+    <hr>
+    <p>All right reserved&copy;</p>
+  </body>
+  <script src="script.js"></script>
 </html>
