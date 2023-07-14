@@ -1,5 +1,111 @@
+header.header {
+  display: flex;
+  background-color: orange;
+  justify-content: space-between;
+  border-radius: 4px;
+  position: sticky;
+  top: 0;
+  margin-top: -8px;
+}
+
+#list {
+  background-color: black;
+}
+
+#list:hover {
+  background-color: black;
+}
+
+#contact:hover {
+  background-color: black;
+}
+
+#addNew:hover {
+  background-color: black;
+}
+
+body {
+  background-color: wheat;
+  font-family: sans-serif;
+}
+
+.remove {
+  background-color: red;
+  border-radius: 4px;
+  border: 0.3px solid black;
+  padding: 5px;
+  margin: 5px;
+  color: white;
+}
+
+div.inputs {
+  display: none;
+  text-align: center;
+  min-height: 50vh;
+  padding-top: 100px;
+}
+
+div.contact {
+  display: none;
+  width: 90%;
+  text-align: center;
+  min-height: 50vh;
+  padding-top: 10%;
+  margin: 0 auto;
+}
+
+h3 {
+  text-align: center;
+}
+
+.header h3 {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.containerMenu ul li {
+  border-radius: 4px;
+  background-color: grey;
+  color: white;
+  padding: 5px;
+}
+
+div.containerMenu ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  list-style-type: none;
+}
+
+div.containerMenu ul li {
+  margin-right: 5px;
+}
+
+div.date {
+  font-weight: bold;
+  font-size: 22px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.containerMenu {
+  width: 30%;
+}
+
 input {
+  border-radius: 5px;
+  border: 0.8px solid black;
+  text-align: center;
   margin-bottom: 5px;
+  width: 50%;
+  height: 30px;
+}
+
+button.add {
+  height: 30px;
+  width: 50%;
 }
 
 p {
@@ -9,7 +115,7 @@ p {
 
 div.container {
   border: 2px solid black;
-  min-height: 20px;
+  min-height: 60vh;
   margin: 0 auto;
   width: 80%;
 }
@@ -18,31 +124,10 @@ button {
   margin-bottom: 4px;
 }
 
-h2 {
-  text-align: center;
-}
-
-hr {
-  width: 20%;
-  text-align: center;
-}
-
-h3 {
-  text-align: center;
-}
-
-div.inputs {
-  text-align: center;
-}
-
 div.containerBooks {
   width: 100%;
   display: flex;
   justify-content: space-between;
-}
-
-.remove {
-  margin: 5px;
 }
 
 div.bookDetails {
@@ -50,4 +135,9 @@ div.bookDetails {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+div.contact ul li {
+  margin-bottom: 10px;
+  list-style-type: none;
 }

@@ -3,6 +3,44 @@ const containerForAllBooks = document.querySelector('.container');
 const bookTextField = document.querySelector('.bookName');
 const authorTextField = document.querySelector('.bookAuthor');
 const addButton = document.querySelector('.add');
+// Dom manipulation for the header Menu items
+const addNew = document.getElementById('addNew');
+const contact = document.getElementById('contact');
+const list = document.getElementById('list');
+const containerAllbooks = document.querySelector('div.container');
+const inputForNewBook = document.querySelector('div.inputs');
+const contactContainer = document.querySelector('div.contact');
+list.addEventListener('click', () => {
+  inputForNewBook.style.display = 'none';
+  contactContainer.style.display = 'none';
+  containerAllbooks.style.display = 'block';
+  list.style.backgroundColor = 'black';
+  contact.style.backgroundColor = 'grey';
+  addNew.style.backgroundColor = 'grey';
+  // eslint-disable-next-line no-restricted-globals
+  location.reload();
+});
+addNew.addEventListener('click', () => {
+  containerAllbooks.style.display = 'none';
+  inputForNewBook.style.display = 'block';
+  contactContainer.style.display = 'none';
+  addNew.style.backgroundColor = 'black';
+  contact.style.backgroundColor = 'grey';
+  list.style.backgroundColor = 'grey';
+});
+contact.addEventListener('click', () => {
+  containerAllbooks.style.display = 'none';
+  inputForNewBook.style.display = 'none';
+  contactContainer.style.display = 'block';
+  addNew.style.backgroundColor = 'grey';
+  contact.style.backgroundColor = 'black';
+  list.style.backgroundColor = 'grey';
+});
+
+// Date
+const dateElement = document.querySelector('.date');
+const date = new Date();
+dateElement.textContent = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
 
 // list for all books
 let allBooks = [];
@@ -21,7 +59,8 @@ class SingleBook {
     containerForAllBooks.appendChild(containerForSingleBook);
     const singleBookObject = new SingleBook(this.bookName, this.bookAuthor);
     allBooks.push(singleBookObject);
-    localStorage.setItem('allBooks', JSON.stringify(allBooks));
+    const ab = JSON.stringify(allBooks);
+    localStorage.setItem('allBooks', ab);
     bookTextField.value = '';
     authorTextField.value = '';
   }
@@ -30,8 +69,8 @@ class SingleBook {
   display() {
     const arrayFromLocalStorage = localStorage.getItem('allBooks');
     if (arrayFromLocalStorage !== null) {
-      const arrayOfAllbooksFromLocal = JSON.parse(arrayFromLocalStorage);
-      allBooks = arrayOfAllbooksFromLocal;
+      allBooks = JSON.parse(arrayFromLocalStorage);
+
       for (let i = 0; i < allBooks.length; i += 1) {
         const containerForSingleBook = document.createElement('div');
         containerForSingleBook.classList.add('containerBooks');
@@ -41,28 +80,34 @@ class SingleBook {
     }
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  handleRemoveButtonClick(event) {
-    if (event.target.classList.contains('remove')) {
-      const removeButton = event.target;
-      const bookContainer = removeButton.parentNode;
-      const index = Array.from(containerForAllBooks.children).indexOf(bookContainer);
-      if (index > -1) {
-        allBooks.splice(index, 1);
+  static handleRemoveButtonClick() {
+    const removeButtons = document.getElementsByClassName('remove');
+    for (let i = 0; i < removeButtons.length; i += 1) {
+      // eslint-disable-next-line no-loop-func
+      removeButtons[i].addEventListener('click', () => {
+        allBooks.splice(i, 1);
         localStorage.setItem('allBooks', JSON.stringify(allBooks));
-        containerForAllBooks.removeChild(bookContainer);
-      }
+
+        // eslint-disable-next-line no-restricted-globals
+        location.reload();
+      });
     }
   }
-}
-new SingleBook().display();
 
-// Attach the remove button click event listener to the container
-containerForAllBooks.addEventListener('click', new SingleBook().handleRemoveButtonClick);
-// add button click  eventHandler
+  // eslint-disable-next-line class-methods-use-this
+}
+
+window.onload = () => {
+  if (JSON.parse(localStorage.getItem('allBooks')) !== 0) {
+    SingleBook.handleRemoveButtonClick();
+  }
+};
+
+new SingleBook().display();
 addButton.addEventListener('click', () => {
   if (bookTextField.value !== '' && authorTextField.value !== '') {
     const book = new SingleBook(bookTextField.value, authorTextField.value);
     book.add();
+    SingleBook.handleRemoveButtonClick();
   }
 });
