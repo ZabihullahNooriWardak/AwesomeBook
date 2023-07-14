@@ -88,11 +88,16 @@ to run this project you need Google chrome or other browser
 
 > 
 
-👤 **Author**
+👤 **Zabi**
 
 - GitHub: [@githubhandle](https://github.com/ZabihullahNooriWardak)
 - Twitter: [@twitterhandle](https://twitter.com/ZabiNoo31954752)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/zabi-noori-aa59a924a/)
+
+👤 **Shahid**
+
+- GitHub: [@githubhandle](https://github.com/Shahid-Bagwan)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/shahid-bagwan-a0a76a1b4/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
