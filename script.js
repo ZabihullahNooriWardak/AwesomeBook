@@ -102,3 +102,12 @@ window.onload = () => {
     SingleBook.handleRemoveButtonClick();
   }
 };
+
+new SingleBook().display();
+addButton.addEventListener('click', () => {
+  if (bookTextField.value !== '' && authorTextField.value !== '') {
+    const book = new SingleBook(bookTextField.value, authorTextField.value);
+    book.add();
+    SingleBook.handleRemoveButtonClick();
+  }
+});
