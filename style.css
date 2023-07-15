@@ -2,7 +2,7 @@ header.header {
   display: flex;
   background-color: orange;
   justify-content: space-between;
-  border-radius: 7.9px;
+  border-radius: 8px;
   position: sticky;
   top: 0;
   margin-top: -4px;
