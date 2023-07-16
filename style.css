@@ -30,6 +30,12 @@ body {
   padding: 5px;
   margin: 5px;
   color: white;
+  transition: all 0.4s ease-in;
+}
+
+.remove:hover {
+  color: red;
+  background-color: white;
 }
 
 div.inputs {
@@ -105,6 +111,14 @@ input {
 button.add {
   height: 30px;
   width: 15%;
+  border-radius: 5px;
+  border: 0.2px solid black;
+  transition: all 0.5s ease-in-out;
+}
+
+button.add:hover {
+  background-color: black;
+  color: white;
 }
 
 p {
