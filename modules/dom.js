@@ -10,4 +10,4 @@ export const list = document.getElementById('list');
 export const containerAllbooks = document.querySelector('div.container');
 export const inputForNewBook = document.querySelector('div.inputs');
 export const contactContainer = document.querySelector('div.contact');
-export  let allBooks = [];
+export let allBooks = [];
