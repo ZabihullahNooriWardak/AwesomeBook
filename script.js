@@ -1,7 +1,5 @@
 // Dom manipulation
-import {
-  containerForAllBooks, bookTextField, authorTextField, addButton,
-} from './modules/dom.js';
+import {containerForAllBooks, bookTextField, authorTextField, addButton} from './modules/dom.js';
 
 // Date
 const dateElement = document.querySelector('.date');
