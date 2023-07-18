@@ -1,5 +1,11 @@
-import {bookTextField,authorTextField,addButton,addNew,contact,list,containerAllbooks,inputForNewBook,contactContainer} from './modules/dom.js';
-import { SingleBook } from './modules/classes.js';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable max-len */
+import { DateTime } from '../node_modules/luxon/src/luxon.js';
+import {
+  bookTextField, authorTextField, addButton, addNew, contact, list, containerAllbooks, inputForNewBook, contactContainer,
+} from './modules/dom.js';
+import SingleBook from './modules/classes.js';
+
 list.addEventListener('click', () => {
   inputForNewBook.style.display = 'none';
   contactContainer.style.display = 'none';
@@ -29,11 +35,10 @@ contact.addEventListener('click', () => {
 
 // Date
 const dateElement = document.querySelector('.date');
-const date = new Date();
-dateElement.textContent = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+const date = DateTime.now().toFormat('yyyy-MM-dd HH:mm:ss');
+dateElement.textContent = date;
 
 // class for single book
-
 
 window.onload = () => {
   if (JSON.parse(localStorage.getItem('allBooks')) !== 0) {
