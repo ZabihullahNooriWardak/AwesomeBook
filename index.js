@@ -4,7 +4,7 @@ import { DateTime } from '../node_modules/luxon/src/luxon.js';
 import {
   bookTextField, authorTextField, addButton, addNew, contact, list, containerAllbooks, inputForNewBook, contactContainer,
 } from './modules/dom.js';
-import SingleBook from './modules/classes.js';
+import BookList from './modules/classes.js';
 
 list.addEventListener('click', () => {
   inputForNewBook.style.display = 'none';
@@ -42,15 +42,15 @@ dateElement.textContent = date;
 
 window.onload = () => {
   if (JSON.parse(localStorage.getItem('allBooks')) !== 0) {
-    SingleBook.handleRemoveButtonClick();
+    BookList.handleRemoveButtonClick();
   }
 };
 
-new SingleBook().display();
+new BookList().display();
 addButton.addEventListener('click', () => {
   if (bookTextField.value !== '' && authorTextField.value !== '') {
-    const book = new SingleBook(bookTextField.value, authorTextField.value);
+    const book = new BookList(bookTextField.value, authorTextField.value);
     book.add();
-    SingleBook.handleRemoveButtonClick();
+    BookList.handleRemoveButtonClick();
   }
 });
